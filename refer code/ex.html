@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Select State and District in Dropdown List</title>
+  </head>
+  <body>
+    <label for="states">Select State:</label>
+    <select id="states" onchange="displayDistricts()">
+      <option value="">--Select State--</option>
+      <option value="Andhra Pradesh">Andhra Pradesh</option>
+      <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+      <option value="Assam">Assam</option>
+      <option value="Bihar">Bihar</option>
+      <option value="Chhattisgarh">Chhattisgarh</option>
+      <option value="Goa">Goa</option>
+      <option value="Gujarat">Gujarat</option>
+      <option value="Haryana">Haryana</option>
+      <!-- Add more states here -->
+    </select>
+
+    <div id="districts-dropdown" style="display: none;">
+      <label>Select District(s):</label><br />
+      <select id="districts" multiple></select>
+    </div>
+
+    <script>
+      const districts = {
+        "Andhra Pradesh": [
+          "Anantapur",
+          "Chittoor",
+          "East Godavari",
+          "Guntur",
+          "Krishna",
+          "Kurnool",
+          "Nellore",
+          "Prakasam",
+          "Srikakulam",
+          "Visakhapatnam",
+          "Vizianagaram",
+          "West Godavari",
+          "YSR Kadapa",
+        ],
+        "Arunachal Pradesh": [
+          "Tawang",
+          "West Kameng",
+          "East Kameng",
+          "Papum Pare",
+          "Kurung Kumey",
+          "Kra Daadi",
+          "Lower Subansiri",
+          "Upper Subansiri",
+          "West Siang",
+          "East Siang",
+          "Siang",
+          "Upper Siang",
+          "Lower Siang",
+          "Lower Dibang Valley",
+          "Dibang Valley",
+          "Anjaw",
+          "Lohit",
+          "Namsai",
+          "Changlang",
+          "Tirap",
+          "Longding",
+        ],
+        "Assam": [
+          "Baksa",
+          "Barpeta",
+          "Biswanath",
+          "Bongaigaon",
+          "Cachar",
+          "Charaideo",
+          "Chirang",
+          "Darrang",
+          "Dhemaji",
+          "Dhubri",
+          "Dibrugarh",
+          "Goalpara",
+          "Golaghat",
+          "Hailakandi",
+          "Hojai",
+          "Jorhat",
+          "Kamrup",
+          "Kamrup Metropolitan",
+          "Karbi Anglong",
+          "Karimganj",
+          "Kokrajhar",
+          "Lakhimpur",
+          "Majuli",
+          "Morigaon",
+          "Nagaon",
+          "Nalbari",
+          "Dima Hasao",
+          "Sivasagar",
+          "Sonitpur",
+          "South Salamara-Mankachar",
+          "Tinsukia",
+          "Udalguri",
+          "West Karbi Anglong",
+        ],
+        "Bihar": [
+        "Sheikhpura",
+      "Sheohar",
+      "Sitamarhi",
+      "Siwan",
+      "Supaul",
+      "Vaishali",
+      "West Champaran",
+    ],
+    "Chhattisgarh": [
+      "Balod",
+      "Baloda Bazar",
+      "Balrampur",
+      "Bastar",
+      "Bemetara",
+      "Bijapur",
+      "Bilaspur",
+      "Dantewada",
+      "Dhamtari",
+      "Durg",
+      "Gariaband",
+      "Gaurela-Pendra-Marwahi",
+      "Janjgir-Champa",
+      "Jashpur",
+      "Kabirdham",
+      "Kanker",
+      "Kondagaon",
+      "Korba",
+      "Koriya",
+      "Mahasamund",
+      "Mungeli",
+      "Narayanpur",
+      "Raigarh",
+      "Raipur",
+      "Rajnandgaon",
+      "Sukma",
+      "Surajpur",
+      "Surguja",
+    ],
+    "Goa": [
+      "North Goa",
+      "South Goa",
+    ],
+    "Gujarat": [
+      "Ahmedabad",
+      "Amreli",
+      "Anand",
+      "Aravalli",
+      "Banaskantha",
+      "Bharuch",
+      "Bhavnagar",
+      "Botad",
+      "Chhota Udaipur",
+      "Dahod",
+      "Dang",
+      "Devbhoomi Dwarka",
+      "Gandhinagar",
+      "Gir Somnath",
+      "Jamnagar",
+      "Junagadh",
+      "Kheda",
+      "Kutch",
+      "Mahisagar",
+      "Mehsana",
+      "Morbi",
+      "Narmada",
+      "Navsari",
+      "Panchmahal",
+      "Patan",
+      "Porbandar",
+      "Rajkot",
+      "Sabarkantha",
+      "Surat",
+      "Surendranagar",
+      "Tapi",
+      "Vadodara",
+      "Valsad",
+    ],
+    "Haryana": [
+      "Ambala",
+      "Bhiwani",
+      "Charkhi Dadri",
+      "Faridabad",
+      "Fatehabad",
+      "Gurugram",
+      "Hisar",
+      "Jhajjar",
+      "Jind",
+      "Kaithal",
+      "Karnal",
+      "Kurukshetra",
+      "Mahendragarh",
+      "Nuh",
+      "Palwal",
+      "Panchkula",
+      "Panipat",
+      "Rewari",
+      "Rohtak",
+      "Sirsa",
+      "Sonipat",
+      "Yamunanagar",
+    ],
+  };
+
+  function displayDistricts() {
+    const stateSelect = document.getElementById("states");
+    const districtDropdown = document.getElementById("districts-dropdown");
+    const districtSelect = document.getElementById("districts");
+
+    // Hide the district dropdown if no state is selected
+    if (!stateSelect.value) {
+      districtDropdown.style.display = "none";
+      return;
+    }
+
+    // Clear any previous options in the district dropdown
+    districtSelect.innerHTML = "";
+
+    // Populate the district dropdown with the districts for the selected state
+    const selectedState = stateSelect.value;
+    const stateDistricts = districts[selectedState];
+    stateDistricts.forEach((district) => {
+      const option = document.createElement("option");
+      option.value = district;
+      option.textContent = district;
+      districtSelect.appendChild(option);
+    });
+
+    // Display the district dropdown
+    districtDropdown.style.display = "block";
+  }
+
+  const stateSelect = document.getElementById("states");
+  stateSelect.addEventListener("change", displayDistricts);  
+</script>
+  </body>
+</html>

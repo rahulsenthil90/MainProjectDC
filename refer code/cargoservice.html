@@ -1,0 +1,281 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DC Cargo</title>
+    <link rel="stylesheet" type="text/css" href="cargoservice.css">
+    <link rel="icon" href="img/logo.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Martian+Mono:wght@200;400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <nav>
+        <div class="navigation">
+            <ul>
+                <li class="list">
+                    <b></b>
+                    <b></b>
+                    <a href="dashboard.html">
+                        <span class="icon"><ion-icon name="grid"></ion-icon></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <b></b>
+                    <b></b>
+                    <a href="truckrent.html">
+                        <span class="icon"><ion-icon name="key"></ion-icon></span>
+                        <span class="title">Rent a Truck</span>
+                    </a>
+                </li>
+                <li class="list active">
+                    <b></b>
+                    <b></b>
+                    <a href="cargoservice.html">
+                        <span class="icon"><ion-icon name="cube"></ion-icon></span>
+                        <span class="title">Cargo Services</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <b></b>
+                    <b></b>
+                    <a href="packers.html">
+                        <span class="icon"><ion-icon name="earth"></ion-icon></span>
+                        <span class="title">Packers & Movers</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <b></b>
+                    <b></b>
+                    <a href="recovery.html">
+                        <span class="icon"><ion-icon name="construct"></ion-icon></span>
+                        <span class="title">Recovery Vechile</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <b></b>
+                    <b></b>
+                    <a href="water.html">
+                        <span class="icon"><ion-icon name="water"></ion-icon></span>
+                        <span class="title">Water Truck Services</span>
+                    </a>
+                </li>
+                
+                <li class="list">
+                    <b></b>
+                    <b></b>
+                    <a href="contactus.html">
+                        <span class="icon"><ion-icon name="call"></ion-icon></span>
+                        <span class="title">Contact Us</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <b></b>
+                    <b></b>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="log-out"></ion-icon></span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="toggle">
+            <ion-icon name="chevron-forward-circle" class="open"></ion-icon>
+            <ion-icon name="chevron-back-circle" class="close"></ion-icon>
+        </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+    let menuToggle=document.querySelector('.toggle');
+    let navigation=document.querySelector('.navigation');
+    menuToggle.onclick = function(){
+        menuToggle.classList.toggle('active')
+        navigation.classList.toggle('active')
+    }
+    let list = document.querySelectorAll('.list');
+    for(let i = 0;i<list.length; i++){
+        list[i].onclick=function(){
+            let j=0;
+            while(j<list.length){
+                list[j++].className='list';
+            }
+            list[i].className='list active';
+        }
+    }
+</script>
+        </nav>
+    </div>
+    <form id="form" action="mreg.php" method="POST" class="form">
+    <section class="main">
+        <i><h2><span class="s4">D</span>eliver    <span class="s4">C</span>hoice</h2></i>
+        <h1 class="heading">Cargo Service</h1>
+        <form action="#">
+            <div class="main-box">
+               
+                <div class="input-box">
+                    <span class="text">Full Name</span>
+                    <input type="text" name="name" placeholder="Please enter your name" required>
+                </div>
+                
+                <div class="input-box">
+                    <span class="text">Phone Number</span>
+                    <input type="tel" name="phonenumber" placeholder="Phone Number" required>
+                </div>
+                <div class="input-box">
+                    <span class="text">From State</span>
+                    <select id="states">
+                            <option value="">Select a state</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="West Bengal">West Bengal</option>
+                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                            <option value="Lakshadweep">Lakshadweep</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Puducherry">Puducherry</option>
+                          </select>
+                    </div>
+                      <div class="input-box">
+                      <span class="text">From District</span>
+                      <select id="districts">
+                        <option value="">Select a District</option>
+                      </select>
+                </div>
+                <div class="input-box">
+                    <span class="text">To State</span>
+                    <select id="states">
+                            <option value="">Select a state</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="West Bengal">West Bengal</option>
+                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                            <option value="Lakshadweep">Lakshadweep</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Puducherry">Puducherry</option>
+                          </select>
+                    </div>
+                      <div class="input-box">
+                      <span class="text">To District</span>
+                      <select id="districts">
+                        <option value="">Select a District</option>
+                      </select>
+                </div>
+                     </div>
+            <div class="btn">
+                <input type="submit" value="Find Cargo Service">
+            </div>
+        </form>
+    </section>
+</form>
+ 
+<script>
+    const states = {
+      "Andhra Pradesh": ["Anantapur", "Chittoor", "East Godavari"],
+      "Arunachal Pradesh": ["Tawang", "West Kameng", "East Kameng"],
+      "Assam": ["Baksa", "Barpeta", "Biswanath"],
+      "Tamil Nadu":["Ariyalur","Chennai","Coimbatore","Cuddalore","Dharmapuri","Dindigul","Erode","Kanchipuram","Kanyakumari","Karur","Krishnagiri","Madurai","Nagapattinam","Namakkal","Nilgiris","Perambalur","Pudukkottai","Ramanathapuram","Salem","Sivaganga","Thanjavur","Theni","Thoothukkudi","Tiruchirappalli","Tirunelveli","Tiruppur","Tiruvallur","Tiruvannamalai","Tiruvarur","Vellore","Viluppuram","Virudhunagar"]
+
+      // Add more states and their respective districts
+    };
+    const trucktype ={
+        "open half body":["28ft x 8ft","40ft x 8ft","48ft x 8ft"],
+        "open full body":["10ft","14ft","16ft","24ft","26ft"],
+        "half body trailer":["28ft x 8ft","40ft x 8ft","48ft x 8ft"],
+        "full body trailer":["28ft","40ft","45ft","53ft"],
+        "flatbed ":["8ft x 4ft","10ft x 6ft","12ft x 6ft","14ft x 7ft","16ft x 8ft","48ft x 8.5ft","53ft x 8.5ft"],
+        "open container":["20ft","40ft","45ft"],
+        "covered truck":["20ft","40ft","40ft high cube","45ft"]
+    }
+    
+    const stateSelect = document.getElementById("states");
+    const districtSelect = document.getElementById("districts");
+    
+    stateSelect.addEventListener("change", function() {
+      districtSelect.innerHTML = "";
+      districtSelect.innerHTML = "<option value=''>Select a District</option>";
+      if (this.value === "") return;
+      const districts = states[this.value];
+      districts.forEach(function(district) {
+        const option = document.createElement("option");
+        option.value = district;
+        option.text = district;
+        districtSelect.appendChild(option);
+      });
+    });
+
+    const truckselect = document.getElementById("trucktype");
+    const sizeselect = document.getElementById("trucksize");
+    
+    truckselect.addEventListener("change", function() {
+      sizeselect.innerHTML = "";
+      sizeselect.innerHTML = "<option value=''>Select a Truck Size</option>";
+      if (this.value === "") return;
+      const trucksize = trucktype[this.value];
+      trucksize.forEach(function(size) {
+        const option = document.createElement("option");
+        option.value = size;
+        option.text = size;
+        sizeselect.appendChild(option);
+      });
+    });
+    </script>                    
+</body>
+</html>

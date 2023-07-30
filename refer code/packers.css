@@ -1,0 +1,275 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 110vh;
+    width: 100%;
+    background-image: url(img/bg4.jpg);
+    background-size:100%;
+    background-position: center;
+    padding: 0px;
+    overflow: hidden;
+}
+.main{
+    background: rgba(15, 11, 11, 0.717);
+    width:1000px;
+    height:700px;
+    padding: 10px 50px;
+    border-radius: 1rem;
+}
+.heading{
+    position: relative;
+    font-size: 30px;
+    font-weight: 700;
+    color:#fff;
+    margin-bottom: 5px;
+}
+.heading::before{
+    position:absolute;
+    content: '';
+    left: 0;
+    bottom: -8px;
+    height: 3px;
+    width: 60px;
+    background: #f40a64;
+}
+.title{
+    color:#000;
+    font-size: 18px;
+    font-weight: 900;
+    font-style:italic;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+form .main-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0px 0 0px 0;
+}
+form .main-box .input-box{
+    width: calc(90%/2);
+    margin: 15px 0;
+}
+form .main-box .input-box input{
+    width: 100%;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.776);
+    color:#000;
+    outline: none;
+    border-radius: 8px;
+    border:1px solid rgba(255,255,255,.09);
+    padding-left: 17px;
+    font-size: 1rem;
+    transition: all .40s;
+}
+form .main-box .input-box select{
+    width:100%;
+    height: 50px;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    color: rgba(125, 122, 113, 0.792);
+    border:1px solid rgba(255,255,255,.09);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.776);
+}
+form .main-box .input-box option{
+    padding: 10px;
+    color: #0a0907;
+}
+.main-box .input-box .text{
+    display: block;
+    margin-bottom: 8px;
+    color: #faf9f6;
+    font-weight: 500;
+}
+form .main-box .input-box input:focus,
+form .main-box .input-box input:valid{
+    border-color: #faf9f6;
+}
+form .btn{
+    height: 50px;
+    margin: 20px 0;
+}
+form .btn input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    background: rgba(255,255,255,.1);
+    color: #faf9f6;
+    border-radius: 8px;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .40s ease;
+}
+form .btn input:hover{
+    background: #ff328e;
+}
+form a{
+    margin-left: 10px;
+    color: rgb(203, 224, 224);
+    text-decoration: none;
+}
+form a:hover{
+    text-decoration: underline;
+}
+.s4{
+    color:#f9004d;
+    font-size: 55px;
+}
+h2{
+    color: white;
+    font-size: 40px;
+}
+        .navigation{
+            position: fixed;
+            top:10px;
+            left:5px;
+            bottom: 10px;
+            width:70px;
+            border-radius: 10px;
+            box-sizing: initial;
+            border-left: 5px solid #f9004d;
+            background: #f9004d;
+            transition: width 0.5s;
+            overflow: hidden;
+        }
+        .navigation.active{
+            width:280px
+        }
+        .navigation ul{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding-left: 5px;
+            padding-top: 40px;
+        }
+        .navigation ul li{
+            position: relative;
+            list-style: none;
+            width: 100%;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+        .navigation ul li.active{
+            background:#fff;
+            color: #000;
+        }
+        .navigation ul li b:nth-child(1){
+            position: absolute;
+            top:-20px;
+            height:20px;
+            width:100%;
+            background:#fff;
+            display: none;
+        }
+        .navigation ul li b:nth-child(1)::before{
+            content: '';
+            position: absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            border-bottom-right-radius: 20px;
+            background-color: #f9004d;
+        }
+        .navigation ul li b:nth-child(2){
+            position: absolute;
+            bottom:-20px;
+            height:20px;
+            width:100%;
+            background:#fff;
+            display: none;
+        }
+        .navigation ul li b:nth-child(2)::before{
+            content: '';
+            position: absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            border-top-right-radius: 20px;
+            background-color: #f9004d;
+        }
+        .navigation ul li.active b:nth-child(1),
+        .navigation ul li.active b:nth-child(2){
+            display: block;
+        }
+        .navigation ul li a{
+            position: relative;
+            display: block;
+            width: 100%;
+            display: flex;
+            text-decoration: none;
+            color:#000;
+        }
+        .navigation ul li.active a{
+            color: #000;
+        }
+        .navigation ul li a .icon{
+            position: relative;
+            display: block;
+            min-width: 60px;
+            height: 60px;
+            line-height: 70px;
+            text-align: center;
+        }
+        .navigation ul li a .icon ion-icon{
+            font-size: 1.9em;
+        }
+        .navigation ul li .img{
+            position: relative;
+            display: block;
+            min-width: 50px;
+            height: 60px;
+            line-height: 70px;
+            text-align: center;
+        }
+        .navigation ul li a .title{
+            position: relative;
+            display: block;
+            padding-left: 10px;
+            height: 60px;
+            line-height: 60px;
+            white-space: normal;
+        }
+        .toggle{
+            position: fixed;
+            bottom:30px;
+            left:20px;
+            width:50px;
+            height:50px;
+            background: #f9004d;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .toggle.active
+        {
+            background:#f9004d;
+        }
+        .toggle ion-icon{
+            position: absolute;
+            color:#000;
+            font-size: 34px;
+            display:none;
+        }
+        .toggle ion-icon.open,
+        .toggle.active ion-icon.close{
+            display: block;
+        }
+        .toggle ion-icon.close,
+        .toggle.active ion-icon.open{
+            display: none;
+        }

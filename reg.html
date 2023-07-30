@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DC Registration form</title>
+    <link rel="icon" href="img/logo.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Martian+Mono:wght@200;400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<style>
+    *{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 110vh;
+    width: 100%;
+    background: url(img/reg1.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+}
+.main{
+    background: rgba(123, 122, 122, 0.35);
+    width:100%;
+    max-width: 800px;
+    padding: 20px 30px;
+    border-radius: 1rem;
+}
+.title{
+    position: relative;
+    font-size: 30px;
+    font-weight: 700;
+    color:#faf9f6;
+    margin-bottom: 10px;
+}
+.title::before{
+    position:absolute;
+    content: '';
+    left: 0;
+    bottom: -8px;
+    height: 3px;
+    width: 60px;
+    background: #ff328e;
+}
+form .main-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px 0 8px 0;
+}
+form .main-box .input-box{
+    width: calc(90%/2);
+    margin: 15px 0;
+}
+form .main-box .input-box input{
+    width: 100%;
+    height: 50px;
+    background: rgba(255,255,255,.1);
+    color:#faf9f6;
+    outline: none;
+    border-radius: 8px;
+    border:1px solid rgba(255,255,255,.09);
+    padding-left: 17px;
+    font-size: 1rem;
+    transition: all .40s;
+}
+.main-box .input-box .text{
+    display: block;
+    margin-bottom: 8px;
+    color: #faf9f6;
+    font-weight: 500;
+}
+form .main-box .input-box input:focus,
+form .main-box .input-box input:valid{
+    border-color: #faf9f6;
+}
+form .btn{
+    height: 50px;
+    margin: 20px 0;
+}
+form .btn input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    background: rgba(255,255,255,.1);
+    color: #faf9f6;
+    border-radius: 8px;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .40s ease;
+}
+form .btn input:hover{
+    background: #ff328e;
+}
+form a{
+    margin-left: 10px;
+    color: rgb(203, 224, 224);
+    text-decoration: none;
+}
+form a:hover{
+    text-decoration: underline;
+}
+.s4{
+    color:#f9004d;
+    font-size: 55px;
+}
+h2{
+    color: white;
+    font-size: 40px;
+}
+</style>
+<body>
+    <form autocomplete="off" id="form" action="userreg.php" method="POST" class="form">
+    <section class="main">
+        <i><h2><span class="s4">D</span>eliver    <span class="s4">C</span>hoice</h2></i>
+        <h1 class="title">User Registration Form</h1>
+        <form action="#">
+            <div class="main-box">
+                <div class="input-box">
+                    <span class="text">Full Name</span>
+                    <input type="text" name="name" placeholder="Please enter your name" required>
+                </div>
+                <div class="input-box">
+                    <span class="text">Username</span>
+                    <input type="text" name="username" placeholder="Please enter your name" required>
+                </div>
+                <div class="input-box">
+                    <span class="text">Email</span>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <span class="text">Phone Number</span>
+                    <input type="tel" name="phonenumber" maxlength="10" placeholder="Phone Number" maxlength="10" required>
+                </div>
+                <div class="input-box">
+                    <span class="text">Password</span>
+                    <input type="Password" name="password" placeholder="Please enter your password" required>
+                </div>
+                <div class="input-box">
+                    <span class="text">Confirm Password</span>
+                    <input type="Password" name="cpassword" placeholder="Confirm your password" required>
+                </div>
+            </div>
+            <div class="btn">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </section>
+</form>
+</body>
+</html>
